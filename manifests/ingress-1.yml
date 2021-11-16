@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "mirrorbot-1278"
+    labels:
+        app: "mirrorbot-1278"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: mirrorbot96ff-mirrorbot-1278.7d0cb3053ef5410da781.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "mirrorbot-1278"
+                servicePort: 80
