@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "mirrorbot-1278"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "mirrorbot-1278"
+  template:
+    metadata:
+      labels:
+        app: "mirrorbot-1278"
+    spec:
+      containers:
+        - name: "mirrorbot-1278"
+          image: "bvnmirrot.azurecr.io/mirrorbot"
+          ports:
+          - containerPort: 80
